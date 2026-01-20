@@ -2,7 +2,6 @@
 pragma solidity ^0.8.33;
 
 contract ZooManagement {
-
     uint256 public totalVisitors;
 
     struct Animal {
@@ -12,18 +11,18 @@ contract ZooManagement {
     }
 
     Animal[] public listofAnimals;
-    mapping ( string => uint256 ) public nameToAge;
+    mapping(string => uint256) public nameToAge;
 
-    function updateVisitorCount (uint256 _newVisitorCount) public {
+    function updateVisitorCount(uint256 _newVisitorCount) public {
         totalVisitors = _newVisitorCount;
     }
 
-    function getTotalVisitors () public view returns (uint256) {
+    function getTotalVisitors() public view returns (uint256) {
         return totalVisitors;
     }
 
-    function addAnimal (string memory _species, string memory _name, uint256 _age) public {
+    function addAnimal(string memory _species, string memory _name, uint256 _age) public {
         listofAnimals.push(Animal(_species, _name, _age));
-        nameToAge[_name] = _age; 
+        nameToAge[_name] = _age;
     }
 }
